@@ -22,4 +22,14 @@
   - dodavanje permisije grupi
   - dodela korisnika grupi 
 
-  
+  U [[https://github.com/vladaindjic/DjangoAuthTests/blob/master/prodavnicesajt/prodavnice/kasa_view.py][~kasa_view.py~]] obratiti pažnju na sledeće:
+  - kako se radi login
+  - kako se radi logout
+  - kako se ograničava pristup pojedinim view funkcijama.
+  - [[https://github.com/vladaindjic/DjangoAuthTests/blob/master/prodavnicesajt/prodavnice/templates/kase_login.html][kase_login.html /template/]]
+  - logout u [[https://github.com/vladaindjic/DjangoAuthTests/blob/master/prodavnicesajt/prodavnice/templates/base.html][base.html /template/-u]]
+
+* Django Test
+
+  Django podržava automatizovano testiranje. Konvencija je da se testove navode u tests folderu i da
+  nazivi modula u kojima se nalaze testovi počinju sa prefiksom test_.
