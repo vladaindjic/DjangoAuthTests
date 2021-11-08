@@ -1,8 +1,8 @@
+from django.contrib.auth.models import Permission, Group, User
+from django.contrib.contenttypes.models import ContentType
 from django.core.management.base import BaseCommand
 
 from ...models import Prodavnica, Kategorija, Artikal, Kasa
-from django.contrib.auth.models import Permission, Group, User
-from django.contrib.contenttypes.models import ContentType
 
 
 class Command(BaseCommand):
@@ -113,7 +113,7 @@ class Command(BaseCommand):
         # kreiranje custom permisije (mogu se koristiti i podrazumevane)
         # npr. "prodavnice.add/change/delete/view_prodavnica"
         # za vise informacija pogledati https://docs.djangoproject.com/en/3.2/topics/auth/default/#programmatically-creating-permissions
-        content_type = ContentType.objects.get_for_model(Prodavnica)
+        content_type = ContentType.objects.get_for_model(Kasa)
         # get_or_create koristimo za slucaj da postoji
         permission, _ = Permission.objects.get_or_create(
             codename='moze_da_koristi',

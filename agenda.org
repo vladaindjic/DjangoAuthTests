@@ -1,0 +1,25 @@
+#+title: Django Auth + tests, GitHub Actions, Git Workflow
+#+author: Vladimir Inđić
+#+OPTIONS: toc:nil
+#+OPTIONS: date:nil
+#+OPTIONS: author:nil
+
+  Današnji termin vežbi namenjen je za upoznavanje sa:
+  - Django sistemom za autentifikaciju i autorizaciju
+  - Django testovima
+  - /GitHub Actions/ alatom za CI/CD
+  - /Git Workflow/-om
+
+  Kao referentni primer, koristi se [[https://github.com/vladaindjic/DjangoAuthTests][sledeći repozitorijum]].
+
+
+* Django Auth
+  Django radni okvir poseduje ugrađeni [[https://docs.djangoproject.com/en/3.2/topics/auth/][sistem za autentifikaciju i autorizaciju korisnika]].
+
+  U funkciji [[https://github.com/vladaindjic/DjangoAuthTests/blob/aded5a1223dc9496e77f090e6393b6b25f994bcf/prodavnicesajt/prodavnice/management/commands/popuni_bazu.py#L112][~_napravi_korisnike~]] obratiti pažnju na sledeće:
+  - dinamičko kreiranje permisija 
+  - dinamičko kreiranje grupa
+  - dodavanje permisije grupi
+  - dodela korisnika grupi 
+
+  
