@@ -1,4 +1,4 @@
-#+title: Django Auth + tests, GitHub Actions, Git Workflow
+#+title: Django Auth + tests, GitHub Actions, GitFlow
 #+author: Vladimir Inđić
 #+OPTIONS: toc:nil
 #+OPTIONS: date:nil
@@ -14,6 +14,7 @@
 
 
 * Django Auth
+
   Django radni okvir poseduje ugrađeni [[https://docs.djangoproject.com/en/3.2/topics/auth/][sistem za autentifikaciju i autorizaciju korisnika]].
 
   U funkciji [[https://github.com/vladaindjic/DjangoAuthTests/blob/aded5a1223dc9496e77f090e6393b6b25f994bcf/prodavnicesajt/prodavnice/management/commands/popuni_bazu.py#L112][~_napravi_korisnike~]] obratiti pažnju na sledeće:
@@ -26,14 +27,16 @@
   - kako se radi login
   - kako se radi logout
   - kako se ograničava pristup pojedinim view funkcijama.
+
+  Takođe obratiti pažnju na sledeće:
   - [[https://github.com/vladaindjic/DjangoAuthTests/blob/master/prodavnicesajt/prodavnice/templates/kase_login.html][kase_login.html /template/]]
   - logout u [[https://github.com/vladaindjic/DjangoAuthTests/blob/master/prodavnicesajt/prodavnice/templates/base.html][base.html /template/-u]]
 
 
-* Django Test
+* Django Testiranje
 
   Django podržava automatizovano testiranje. Konvencija je da se testovi navode unutar ~tests~ foldera
-  i da nazivi modula u kojima se nalaze testovi počinju sa prefiksom ~test_~.
+  i da nazivi modula u kojima se nalaze testovi počinju sa prefiksom ~test~.
   Testovi se pišu unutar klasa koje nasleđuju ~unittest.TestCase~, a navedene su u pomenutim modulima.
 
 ** Jedinično testiranje
@@ -42,14 +45,14 @@
 
 ** Integracioni testovi
 
-   Klasa [[https://github.com/vladaindjic/DjangoAuthTests/blob/master/prodavnicesajt/prodavnice/tests/test_kase_login.py][~KaseLoginTests~]] predstavlja primer integracionog testa.
+   Klasa [[https://github.com/vladaindjic/DjangoAuthTests/blob/master/prodavnicesajt/prodavnice/tests/test_kase_login.py][~KaseLoginTests~]] predstavlja primer skupa integracionih testova.
    Obratiti pažnju na:
    - inicijalizaciju baze za ovaj skup testova (~setUpTestData~)
-   - Pripremu [[https://docs.djangoproject.com/en/3.2/topics/testing/tools/#the-test-client][test klijenta]] za svaki test.
+   - Pripremu [[https://docs.djangoproject.com/en/3.2/topics/testing/tools/#the-test-client][test klijenta]] za svaki test (~setUp~).
    - Slanje zahteva serveru upotrebom pripremljenog klijenta.
    - Provera vrednosti koje server vrati kao odgovor na pomenuti zahtev.
 
-*** Pokretanje testa
+*** Pokretanje ~KaseLoginTests~ skupa testova
 
    Za pokretanje testova navedenih unutar pomenute klase, izvršiti sledeću komandu:
    #+begin_src
@@ -82,4 +85,4 @@
 * Upotreba GitHub platforme
 
   Smernice za upotrebu GitHub platforme tokom izrade projektnog zadatke pogledati [[https://docs.google.com/document/d/1KEHUMj6sIWnKAclZDA-4VQpIFRr7FyN70xAb44i6z2E/edit?usp=sharing][u sledećem dokumentu]].
-  Posebno obratiti pažnju na pitanja i odgovore koji se tiču upotrebe GitHub platforme.
+  Posebno obratiti pažnju na pitanja i odgovore koji se tiču upotrebe /GitHub/ platforme.
