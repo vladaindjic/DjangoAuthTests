@@ -29,7 +29,44 @@
   - [[https://github.com/vladaindjic/DjangoAuthTests/blob/master/prodavnicesajt/prodavnice/templates/kase_login.html][kase_login.html /template/]]
   - logout u [[https://github.com/vladaindjic/DjangoAuthTests/blob/master/prodavnicesajt/prodavnice/templates/base.html][base.html /template/-u]]
 
+
 * Django Test
 
-  Django podržava automatizovano testiranje. Konvencija je da se testove navode u tests folderu i da
-  nazivi modula u kojima se nalaze testovi počinju sa prefiksom test_.
+  Django podržava automatizovano testiranje. Konvencija je da se testovi navode unutar ~tests~ foldera
+  i da nazivi modula u kojima se nalaze testovi počinju sa prefiksom ~test_~.
+  Testovi se pišu unutar klasa koje nasleđuju ~unittest.TestCase~, a navedene su u pomenutim modulima.
+
+** Jedinično testiranje
+  
+  Primer pisanja jediničnog testa možete pronaći na [[https://docs.djangoproject.com/en/3.2/topics/testing/overview/#writing-tests][linku]].
+
+** Integracioni testovi
+
+   Klasa [[https://github.com/vladaindjic/DjangoAuthTests/blob/master/prodavnicesajt/prodavnice/tests/test_kase_login.py][~KaseLoginTests~]] predstavlja primer integracionog testa.
+   Obratiti pažnju na:
+   - inicijalizaciju baze za ovaj skup testova (~setUpTestData~)
+   - Pripremu [[https://docs.djangoproject.com/en/3.2/topics/testing/tools/#the-test-client][test klijenta]] za svaki test.
+   - Slanje zahteva serveru upotrebom pripremljenog klijenta.
+   - Provera vrednosti koje server vrati kao odgovor na pomenuti zahtev.
+
+*** Pokretanje testa
+
+   Za pokretanje testova navedenih unutar pomenute klase, izvršiti sledeću komandu:
+   #+begin_src
+   python manage.py test prodavnice.tests --noinput
+   #+end_src
+
+   Obratiti pažnju da parametar [[https://docs.djangoproject.com/en/3.2/topics/testing/overview/#the-test-database][~--noinput~]] dovodi do brisanja sadržaja baze nakon zavšetka testova.
+
+
+** Pokretanje testova
+
+    Ostale načine za pokretanje automatizovanih testove možete pronaći [[https://docs.djangoproject.com/en/3.2/topics/testing/overview/#running-tests][ovde]].
+
+
+* GitHub Actions
+
+  [[https://github.com/features/actions][/Github Actions/]] predstavlja jedan od alata koji služe za CI/CD.
+  Da biste ga koristili, dovoljno je samo da specificirate /workflow/ unutar ~.github/workflows/~ direktorijuma.
+  Datoteka [[https://github.com/vladaindjic/DjangoAuthTests/blob/master/.github/workflows/django.yml][~.github/workflows/django.yml~]] predstavlja jednostavan primer /workflow/-a.
+  Više informacije o značenju elemenata /YAML workflow/ datoteke možete pronaći u zvaničnoj [[https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions#understanding-the-workflow-file][dokumentaciji]].
