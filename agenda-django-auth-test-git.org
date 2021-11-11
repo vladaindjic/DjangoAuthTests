@@ -75,6 +75,8 @@
   Više informacije o značenju elemenata /YAML workflow/ datoteke možete pronaći u zvaničnoj [[https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions#understanding-the-workflow-file][dokumentaciji]].
   Rezultati svih /workflow/-ova (/build/ planova) dostupni su u [[https://github.com/vladaindjic/DjangoAuthTests/actions][/Actions/ kartici direktorijuma]].
 
+  Informacije o upotrebi CI/CD alata za potrebe ovog projekta možete pronaći [[https://docs.google.com/document/d/1KEHUMj6sIWnKAclZDA-4VQpIFRr7FyN70xAb44i6z2E/edit?usp=sharing][u dokumentu]].
+  Posebno obratiti pažnju na pitanja koja se tiču /SCM/-a i /CI/CD/ alata. 
 
 * GitFlow
 
