@@ -39,8 +39,23 @@ Run the docker container locally
 docker run --name djangoappcont -d -p 8000:8000 djangoapp
 ```
 
-### Run from DockerHub
-Run the docker container from the DockerHub
+### Run from Docker Hub
+
+#### Upload the local image to Docker Hub
+To upload the image on Docker Hub, you need to create an account on Docker Hub platform and [create a repository](https://docs.docker.com/docker-hub/repos/).
+Then, the image needs to build locally by using the following command:
+```console
+docker build -t <hub-user-name>/<repo-name> .
+```
+After that, the image can be pushed to the repository by running the command:
+```console
+docker push <hub-user-name>/<repo-name>:latest
+```
+Other tags can be used instead of `latest`.
+
+
+#### Run the docker container from the image hosted on Docker Hub
+To start the docker container by using the image hosted on Docker Hub, use the following command.
 ```console
 docker run --name djangoappcont -d -p 8000:8000 vladaindjic/simple-django-app
 ```
