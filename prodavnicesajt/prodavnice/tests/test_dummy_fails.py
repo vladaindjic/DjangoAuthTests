@@ -5,3 +5,4 @@ from django.test import SimpleTestCase
 class KaseLoginTests(SimpleTestCase):
     def test_dummy_fails(self):
         self.assertEqual(2 + 2, 5)
+
